@@ -12,7 +12,6 @@
 
 #include "get_next_line.h"
 
-
 char *ft_identifier(storage)
 {
 
@@ -25,31 +24,30 @@ char *ft_read(storage)
 
 	while (file != '\0')
 		int bytesRead = read(fd, storage, 3);
+	ft_strchr(storage, "\n");
 
 }
-
-
 
 char *get_next_line(int fd)
 {
 	static char *storage;
 
 	//chars from file are read into the static var
-	storage = ft_calloc(BUFFER_SIZE + 1 * ())
+	storage = ft_calloc(BUFFER_SIZE + 1 * sizeof(char));
+	if (storage == NULL)
+		return (NULL);
 
 	//newline is identified and reading is stopped
+	ft_identifier(storage, "\n");
 
 	//transfer the line chars into a new variable and remove them from the 
 	//static var and leave only the post-newline chars inside
-
-	storage = ft_read(XXX) //Everything including things after /n
+	ft_pre()
+	ft_post()
 
 	//return the line chars to the main func
 	return (line);
 }
-
-
-
 
 //In the test function, the file is opened and GNL is repeatedly called until the end of file 
 int main()

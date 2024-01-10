@@ -17,8 +17,9 @@
 #include <unistd.h>
 #include <fcntl.h>
 
-int	BUFFER_SIZE = 3;
-
 char	*get_next_line(int fd);
+char	*ft_strchr(const char *s, int c)
+void	*ft_calloc(size_t nmemb, size_t size)
+
 
 #endif

@@ -3,41 +3,50 @@
 
 #include "get_next_line.h"
 
+/*
 int main()
-{   
-    //Declaring a FILE strcture called 'fptr'
-    FILE *fptr;
-    char buffer[100];
+{
+    char str[] = "bfweyi\n";
+    int a = 0;
 
-    // Open the file 'testfile' for reading only
-    fptr = fopen("testfile.txt", "r");
-
-    //If opening the file fails, write 'Error opening file' and return 1
-    if (fptr == NULL)
+    while(1)
     {
-        perror("Error opening file");
-        return 1;
+        write(1, &str[a], 1);
+        write(1, "\n", 1);
+        a++;
+        if (str[a] == '\0')
+        {
+            write(1, &str[a], 1);
+            break;
+        }
     }
+}*/
 
-    // Get the file descriptor associated with the FILE stream fptr
-    int fd = fileno(fptr);
+int main()
+{
+    int count;
+    char line;
+    int fd;
 
-    // Read data using the file descriptor into the buffer and number of bytes is stored in 'bytesRead'
-    // The number of bytes read at a time is the size of the buffer, so it is read all at once
-    ssize_t bytesRead = read(fd, buffer, sizeof(buffer));
+    //Opening the file called testfile with the permission to read only
+    fd = fopen("testfile.txt", "r");
+    while (1)
+    {
+        if (fd == NULL)
+        {
+            printf("Cannot open file\n");
+            exit(0);
+        }
 
-    // If bytes read > 0, write the same number of bytes from the buffer, if not then print EOF
-    if (bytesRead > 0)
-            write(1, buffer, bytesRead);
-    else if (bytesRead == 0)
-            printf("End of file reached.\n");
-    else
-            perror("Error reading file");
+        line =  int bytesRead = read(fd, storage, 3);
+        count++;
+        printf("[%d]: %s\n", count, line)
+        line == NULL;
+    }
+    
 
-    // Close the FILE stream
-    fclose(fptr);
-
-    return 0;
+    close (fd);
+    return(0);
 }
 
 /*
@@ -71,33 +80,5 @@ int main()
     fclose(fptr);
 
     return 0;
-}
-*/
-
-/*
-//In the test function, the file is opened and GNL is repeatedly called until the end of file 
-int main()
-{
-    //fptr is a pointer to a FILE structure
-    FILE *fptr;
-    //Declaring variables for the file name and another used to read characters from the file
-    char c;
-
-    //Opening the file called testfile with the permission to read only
-    fptr = fopen("testfile.txt", "r");
-    if (fptr == NULL)
-    {
-        printf("Cannot open file\n");
-        exit(0);
-    }
-    //Read the content of the file
-    c = fgetc(fptr);
-    while (c != EOF)
-    {
-        printf ("%c", c);
-        c = fgetc(fptr);
-    }
-    fclose(fptr);
-    return(0);
 }
 */

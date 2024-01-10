@@ -40,6 +40,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 		return (ptr);
 	if (!ptr)
 		return (NULL);
-	ft_bzero(ptr, nmemb * size);
+	memset(ptr, 0, nmemb * size);
 	return (ptr);
 }

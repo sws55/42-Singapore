@@ -101,7 +101,6 @@ char	*ft_strjoin(char *s1, char *s2)
 
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-    // write code that returns the length of s1 for len1 without using strlen()
     len1 = 0;
     while (s1[len1])
         len1++;

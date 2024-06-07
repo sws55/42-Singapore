@@ -27,10 +27,10 @@ $(NAME): $(OBJS)
 	$(ARFLAGS) $(NAME) $(OBJS)
 
 bonus: $(OBJS) $(OBJS_BONUS)
-	$(ARFLAGS) $(NAME) $(OBJS) $(OBJS_BONUS)
+	$(ARFLAGS) $(NAME) $(OBJS)
 
 clean:
-	$(RM) $(OBJS) $(OBJS_BONUS)
+	$(RM) $(OBJS)
 
 fclean: clean
 	$(RM) $(NAME)

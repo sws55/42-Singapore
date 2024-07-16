@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sebwong <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/26 19:03:45 by sebwong           #+#    #+#             */
-/*   Updated: 2024/05/26 19:03:46 by sebwong          ###   ########.fr       */
+/*   Created: 2023/09/20 12:24:07 by sebwong           #+#    #+#             */
+/*   Updated: 2023/09/20 12:24:08 by sebwong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-
-
-int main(int ac, char **av)
+int	ft_lstsize(t_list *list)
 {
-	if (ac == 3)
+	size_t	i;
+
+	i = 0;
+	while (list)
 	{
-		f
+		list = list->next;
+		i++;
 	}
-	return(0);
+	return (i);
 }

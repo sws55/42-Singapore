@@ -1,22 +1,24 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: sebwong <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/05/26 19:17:17 by sebwong           #+#    #+#              #
-#    Updated: 2024/05/26 19:17:19 by sebwong          ###   ########.fr        #
+#    Created: 2023/09/10 18:15:19 by sebwong           #+#    #+#              #
+#    Updated: 2023/09/10 18:15:20 by sebwong          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = 
+NAME = libftprintf.a
+SRCS = ft_printf.c process_string.c process_num.c \
 
 OBJS = $(SRCS:.c=.o)
-OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
+ARFLAGS = ar rcs
+RM = rm -rf
 
 all: $(NAME)
 
@@ -24,9 +26,6 @@ all: $(NAME)
 	$(CC) $(CFLAGS) -c $^ -o $@
 
 $(NAME): $(OBJS)
-	$(ARFLAGS) $(NAME) $(OBJS)
-
-bonus: $(OBJS) $(OBJS_BONUS)
 	$(ARFLAGS) $(NAME) $(OBJS)
 
 clean:
